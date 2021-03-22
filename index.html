@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="eng" ng-app="todomvc" data-framework="firebase">
+    <head>
+        <meta charset="utf-8"
+        <title> todo app</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="container" ng-controller="TodoCtrl">
+            <section class="row" style="padding-left: 10px;padding-right: 10px;">
+            <header>
+                <h1 class="text-center">Todo App</h1>
+                <span>To Do: <strong>{{remainingCount}}</strong></span>
+                <span>To Do: <strong>{{deletedCount}}</strong></span>
+                <span>To Do: <strong>{{completedCount}}</strong></span>
+                <span> &nbsp;</span>
+                <form ng-submit="addTodo ()">
+                    <input class="form-control" placeholder="Whats do you wanna do" ng-model="newTodo" autofocus> 
+                </form>
+            </header>
+            <section ng-show="totalCount" ng-cloak></section>
+            </section>
+        </div>
+    </body>

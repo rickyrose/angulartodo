@@ -95,8 +95,17 @@ todomvc.directive('todoFocus', function todoFocus ($timeout){
                 $timeout(function(){
                     //sets focus for edit
                     elem[0].focus();
-                })
+                }), 0, false
             }
         })
     }
-})
+});
+
+todomvc.directive('todoBlur', function (){
+    return function (scope, elem, attrs){
+        elem.bind('blur', function(){
+            //run function
+            scope.$apply(attrs.todoBlur);
+        })
+    };
+});
