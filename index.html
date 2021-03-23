@@ -2,7 +2,7 @@
 <html lang="eng" ng-app="todomvc" data-framework="firebase">
     <head>
         <meta charset="utf-8"
-        <title> todo app</title>
+        <title>todo app</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="">
     </head>
@@ -20,6 +20,17 @@
                 </form>
             </header>
             <section ng-show="totalCount" ng-cloak></section>
+            <input type="checkbox" ng-model="allChecked" ng-click="markAll(allChecked)">
+            <label for ="toggle-all">Mark all Completed</label>
+            <h3>Things to do?</h3>
+            <p>Double click to edit</p>
+            <div class="list-group">
+                <div ng-repeat="todo in todos" class="list-group-item" ng-class="{editing: todo == editedTodo}">
+                    <div class="view" ng-if="todo !== editedTodo">
+                        
+                    </div>
+                </div>
+            </div>
             </section>
         </div>
     </body>
